@@ -1,11 +1,12 @@
 import XCTest
 @testable import SwiftChainerCore
 
-final class SwiftChainerCoreTests: XCTestCase {
+extension NSAttributedString: ChainerCompatible { }
+
+final class SwiftChainerTests: XCTestCase {
+
     func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-        XCTAssertEqual(SwiftChainerCore().text, "Hello, World!")
+        let text = NSAttributedString()
+        XCTAssertEqual(String("\(type(of: text.sc))"), "Chainer<NSAttributedString>")
     }
 }
